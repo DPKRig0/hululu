@@ -1,0 +1,35 @@
+.lob{
+    color: #ff6ec7;
+    font-size: large;
+    text-align: center;
+}
+body{
+    background-color: beige;
+}
+.kep1{
+    width: 300px;
+    height: 300px;
+    float: left;
+    position: relative;
+}
+.kep2{
+    width: 300px;
+    height: 300px;
+    float: right;
+    position: relative;
+}
+.kep3{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+.lob2{
+    color: #ff6ec7;
+    font-size: large;
+    text-align: center;
+}
+.lob3{
+    color: #ff6ec7;
+    font-size: large;
+    text-align: center;
+}
