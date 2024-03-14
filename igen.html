@@ -15,10 +15,10 @@
   <label for="securityQuestion">Mit adtál nekem, amikor legelőször találkoztunk.</label><br>
   <select id="securityQuestion" name="securityQuestion" required>
     <option value="">Mit adtál nekem, amikor legelőször találkoztunk.</option>
-    <option value="kutya">Karkötő</option>
+    <option value="karkötő">Karkötő</option>
     <option value="macska">Sapi</option>
-    <option value="tigris">Páros Kolbász</option>
-    <option value="medve">Sült Krumpli</option>
+    <option value="páros_kolbász">Páros Kolbász</option>
+    <option value="sült_krumpli">Sült Krumpli</option>
   </select><br><br>
   <input type="submit" value="Megerősítés">
 </form>
@@ -61,6 +61,9 @@
   if (localStorage.getItem('answered') === 'true') {
     document.getElementById('securityForm').style.display = 'none'; // Elrejtjük az űrlapot
     document.getElementById('successMessage').style.display = 'block'; // Megjelenítjük a sikeres válasz üzenetet
+  } else if(localStorage.getItem('incorrect') === 'true') {
+    document.getElementById('securityForm').style.display = 'none'; // Elrejtjük az űrlapot
+    document.getElementById('errorMessage').style.display = 'block'; // Megjelenítjük a hibás válasz üzenetet
   }
 
   // Az űrlap elküldése után jelöljük meg, hogy a felhasználó már válaszolt
@@ -70,13 +73,17 @@
     if (selectedOption === 'macska') { // A helyes válasz itt is "macska"
       localStorage.setItem('answered', 'true'); // Elmentjük a választ, hogy csak egyszer lehessen választani
       document.getElementById('securityForm').style.display = 'none'; // Elrejtjük az űrlapot
-      document.getElementById('successMessage').style.display = 'block'; // Megjelenítjük a sikeres válasz üzenetet
+      document.getElementById('successMessage').style.display = 'block'; // Megjelenítjük a sikeres válasz üzenetetet
     } else {
+      localStorage.setItem('incorrect', 'true'); // Elmentjük a hibás választ
       document.getElementById('securityForm').style.display = 'none'; // Elrejtjük az űrlapot
-      document.getElementById('errorMessage').style.display = 'block'; // Megjelenítjük a hibás válasz üzenetet
+      document.getElementById('errorMessage').style.display = 'block'; // Megjelenítjük a hibás válasz üzenetetet
     }
   });
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
