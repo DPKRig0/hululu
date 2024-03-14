@@ -1,35 +1,26 @@
-.lob{
-    color: #ff6ec7;
-    font-size: large;
+body {
+    font-family: Arial, sans-serif;
     text-align: center;
-}
-body{
+    padding-top: 50px;
     background-color: beige;
 }
-.kep1{
-    width: 300px;
-    height: 300px;
-    float: left;
-    position: relative;
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 20px; /* Lekerekített szélek */
 }
-.kep2{
-    width: 300px;
-    height: 300px;
-    float: right;
-    position: relative;
+
+button#igen {
+    background-color: green;
+    color: white;
+    border: none;
 }
-.kep3{
-    width: 300px;
-    height: 300px;
-    margin: auto;
-}
-.lob2{
-    color: #ff6ec7;
-    font-size: large;
-    text-align: center;
-}
-.lob3{
-    color: #ff6ec7;
-    font-size: large;
-    text-align: center;
+
+button#nem {
+    background-color: red;
+    color: white;
+    border: none;
 }

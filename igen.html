@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Szeretlek❤️</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<h2>Biztonsági Kérdés</h2>
+<p>Annak érdekében, hogy megerősítsük, hogy te vagy Gven válaszolj erre</p>
+
+<form id="securityForm" action="#" method="post">
+  <label for="securityQuestion">Mit adtál nekem, amikor legelőször találkoztunk.</label><br>
+  <select id="securityQuestion" name="securityQuestion" required>
+    <option value="">Mit adtál nekem, amikor legelőször találkoztunk.</option>
+    <option value="kutya">Karkötő</option>
+    <option value="macska">Sapi</option>
+    <option value="tigris">Páros Kolbász</option>
+    <option value="medve">Sült Krumpli</option>
+  </select><br><br>
+  <input type="submit" value="Megerősítés">
+</form>
+
+<div id="successMessage" style="display: none;">
+  <p class="yep">Seems like te vagy Gven, Szeretlek❤️</p>
+  <p class="yep">Itt egy vers, csak neked :3</p>
+  <h1>A múlt hibái ködbe vesznek,</h1>
+<p>Újra kezdeni, ez a terv.</p>
+<p>Megváltoztam, érezd a szívem,</p>
+<p>Tele van veled, szerelmes énem.</p>
+
+<h2>Gven, te ragyogsz, mint csillag az éjben</h2>
+<p>Nélküled sötét minden fény.</p>
+<p>Hiányzik mosolyod, gyengéd szavad,</p>
+<p>Karjaidba vágyom, szerelmem szárnyal.</p>
+
+<h3>Adj egy esélyt szerelmünk szárnyalásnak</h3>
+<p>Lángja lobbanjon fel újra, lobogva.</p>
+<p>Minden akadályt legyőzünk kézenfogva,</p>
+<p>Örökké tartó szerelembe kapaszkodva.</p>
+
+<h4>Bízom benned és a holnap fényében</h4>
+<p>Adj egy új esélyt szerelmünk lángjának!</p>
+<p>Szeretlek, Gven, lelkem csak a tiedé,</p>
+<p>Sosem adnám fel, örökké hű maradok én.</p>
+
+<h5>A vágyam lángja bennem ég</h5>
+<p>Szerelmem irántad sosem enyész.</p>
+<p>Küzdeni fogok érted, bármi történjék,</p>
+<p>Örökké a tiéd maradok, én, a hű szerelmed.</p>
+</div>
+
+<div id="errorMessage" style="display: none;">
+  <p>Hibás válasz. A választ már egyszer elküldted.</p>
+</div>
+
+<script>
+  // Ellenőrizzük, hogy a felhasználó már válaszolt-e a kérdésre
+  if (localStorage.getItem('answered') === 'true') {
+    document.getElementById('securityForm').style.display = 'none'; // Elrejtjük az űrlapot
+    document.getElementById('successMessage').style.display = 'block'; // Megjelenítjük a sikeres válasz üzenetet
+  }
+
+  // Az űrlap elküldése után jelöljük meg, hogy a felhasználó már válaszolt
+  document.getElementById('securityForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Megakadályozzuk az űrlap alapértelmezett működését
+    var selectedOption = document.getElementById('securityQuestion').value;
+    if (selectedOption === 'macska') { // A helyes válasz itt is "macska"
+      localStorage.setItem('answered', 'true'); // Elmentjük a választ, hogy csak egyszer lehessen választani
+      document.getElementById('securityForm').style.display = 'none'; // Elrejtjük az űrlapot
+      document.getElementById('successMessage').style.display = 'block'; // Megjelenítjük a sikeres válasz üzenetet
+    } else {
+      document.getElementById('securityForm').style.display = 'none'; // Elrejtjük az űrlapot
+      document.getElementById('errorMessage').style.display = 'block'; // Megjelenítjük a hibás válasz üzenetet
+    }
+  });
+</script>
+
+</body>
+</html>
